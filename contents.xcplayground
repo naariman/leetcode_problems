@@ -4,5 +4,6 @@
         <page name='Array'/>
         <page name='String'/>
         <page name='Stack'/>
+        <page name='BinarySearch'/>
     </pages>
 </playground>
