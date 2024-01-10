@@ -1,7 +1,30 @@
-//: [Previous](@previous)
+class Node {
+    let value: Int
+    var next: Node?
+    
+    init(value: Int, next: Node?) {
+        self.value = value
+        self.next = next
+    }
+}
 
-import Foundation
+let threeNode = Node.init(value: 3, next: nil)
+let twoNode = Node.init(value: 2, next: threeNode)
+let oneNode = Node.init(value: 1, next: twoNode)
 
-var greeting = "Hello, playground"
 
-//: [Next](@next)
+func reversedList(head: Node?) -> Node? {
+    var prev: Node? = nil
+    var cur = head
+    
+    while (cur != nil) {
+        var next = cur?.next
+        
+        cur?.next = prev
+        
+        prev = cur
+        cur = next
+    }
+    
+    return prev
+}
